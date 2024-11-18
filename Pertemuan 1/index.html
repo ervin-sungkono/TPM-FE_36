@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 1 TPM</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h1>Header 1</h1>
+    <h2>Header 2</h2>
+    <h3>Header 3</h3>
+    <h4>Header 4</h4>
+    <h5>Header 5</h5>
+    <h6>Header 6</h6>
+
+    <p>This is a sample text. <span>(This is a span text)</span> <i>This is an italic text.</i> <b>This is a bolded text.</b></p>
+    <a href="https://www.youtube.com" target="_blank">URL YOUTUBE</a>
+
+    <h2>Contoh Flexbox</h2>
+    <section class="wrapper flex">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+        <div>DIV 3</div>
+    </section>
+
+    <h2>Contoh Grid</h2>
+    <section class="wrapper grid">
+        <div>DIV 1</div>
+        <div>DIV 2</div>
+        <div>DIV 3</div>
+    </section>
+
+    
+    <section class="form-section">
+        <h2>Contoh Form</h2>
+        <form class="form" action="#">
+            <div class="input_group">
+                <label for="input_text">Text</label>
+                <input type="text" name="text" id="input_text"/>
+            </div>
+            <div class="input_group">
+                <label for="input_password">Password</label>
+                <input type="password" name="password" id="input_password">
+            </div>
+            <div class="input_group">
+                <label for="input_email">Email</label>
+                <input type="email" name="email" id="input_email">
+            </div>
+            <div class="input_group">
+                <label for="input_number">Number</label>
+                <input type="number" name="number" id="input_number">
+            </div>
+            <div class="input_group">
+                <label for="input_date">Date</label>
+                <input type="date" name="date" id="input_date">
+            </div>
+            <div class="input_group">
+                <label for="description">Description</label>
+                <textarea rows="5" name="description" id="description"></textarea>
+            </div>
+            <div class="input_group">
+                <label>Gender</label>
+                <div>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                </div>
+            </div>
+            <div>
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree">Agreement</label>
+            </div>
+            <button class="button-primary" type="submit">Submit</button>
+        </form>
+    </section>
+
+    <div class="box relative"></div>
+    <div class="relative">
+        <div class="box absolute"></div>
+    </div>
+    <div class="box fixed"></div>
+
+    <div class="icon-wrapper">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-facebook fa-pulse" aria-hidden="true"></i>
+    </div>
+</body>
+</html>

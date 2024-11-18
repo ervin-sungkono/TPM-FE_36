@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    width: 100%;
+}
+
+.wrapper.flex{
+    display: flex;
+    gap: 20px;
+}
+
+.wrapper.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.wrapper.flex > div{
+    flex-grow: 1;
+}
+
+.wrapper > div{
+    background-color: #ff7e05;
+    padding: 24px 32px;
+    transition: 0.5s background-color ease-in-out, 0.3s scale ease-in-out, 0.3s translate ease-in-out;
+    transform-origin: left;
+}
+
+.wrapper > div:hover{
+    background-color: #8d4b0e;
+    scale: 1.1;
+    translate: 10px -20px;
+}
+
+.form-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-section > h2{
+    margin-bottom: 20px;
+}
+
+.form-section .form{
+    max-width: 616px;
+    width: 100%;
+    margin-bottom: 48px;
+    padding: 24px 32px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.10);
+}
+
+.form-section .input_group{
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.form-section .input_group > label{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-section .input_group > input,
+.form-section .input_group > textarea{
+    outline: none;
+    border: 1px solid #ff7e05;
+    background-color: #ff7e05;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.form-section .input_group > textarea{
+    resize: vertical;
+}
+
+.button-primary{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.button-primary:hover{
+    background-color: #4a4a4a;
+}
+
+.button-primary:active{
+    background-color: #a6a6a6;
+}
+
+.icon-wrapper{
+    width: 100%;
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    width: 200px;
+    height: 100px;
+    background-color: #2b2b2b;
+}
+
+.relative{
+    position: relative;
+    left: 15px;
+}
+
+.absolute{
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+
+.fixed{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 768px){
+    .wrapper.flex{
+        flex-direction: column;
+    }
+    
+    .wrapper.grid{
+        grid-template-columns: 1fr;
+    }
+}
