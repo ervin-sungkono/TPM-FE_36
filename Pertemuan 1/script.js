@@ -3,11 +3,8 @@ const exampleForm = document.getElementById('form-example')
 function onSubmitForm(e){
     e.preventDefault()
 
-    new FormData(exampleForm)
-}
+    const data = new FormData(e.target)
 
-function handleSubmitForm(e){
-    const data = e.formData
     const text = data.get('text')
     const password = data.get('password')
     const email = data.get('email')
@@ -25,12 +22,12 @@ function handleSubmitForm(e){
     if(!email){
         errorMessage.push("Email is required")
     }
-    if(errorMessage){
+    if(errorMessage.length > 0){
         alert(errorMessage.join('\n'))
     }else{
         // No error, send the form data
+        e.target.submit()
     }
 }
 
 exampleForm.addEventListener("submit", onSubmitForm)
-exampleForm.addEventListener("formdata", handleSubmitForm)
