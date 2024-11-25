@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 3</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section id="game-section">
+        <div class="header">
+            <h1>ROCK, PAPER, SCISSORS!</h1>
+            <div class="score-text-wrapper">
+                <p id="high-score-text">High Score:</p>
+                <p id="score-text">Score:</p>
+            </div>
+        </div>
+        <div class="game-content">
+            <div class="game-display">
+                <div class="game-block-wrapper">
+                    <p>You</p>
+                    <div class="game-block">
+                        <img id="player-option" src="assets/default.png" alt=""/>
+                    </div>
+                </div>
+                <p>VS</p>
+                <div class="game-block-wrapper">
+                    <p>Computer</p>
+                    <div class="game-block">
+                        <img id="computer-option" src="assets/default.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+            <div class="game-option">
+                <div class="option-header">
+                    <h2>Pick Your Choice!</h2>
+                    <p id="lives-remaining-text">Lives Remaining:</p>
+                </div>
+                <div class="option-button-wrapper">
+                    <button id="rock-button" class="game-block game-button">
+                        <img src="assets/rock.png" alt=""/>
+                    </button>
+                    <button id="paper-button" class="game-block game-button">
+                        <img src="assets/paper.png" alt=""/>
+                    </button>
+                    <button id="scissors-button" class="game-block game-button">
+                        <img src="assets/scissors.png" alt=""/>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

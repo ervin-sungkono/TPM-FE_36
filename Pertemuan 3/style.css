@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --orange: #F49F00;
+    --black: #2B2B2B;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+#game-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 64px 80px;
+}
+
+.header{
+    text-align: center;
+}
+
+.header > h1{
+    font-size: 40px;
+    margin-bottom: 24px;
+}
+
+.header .score-text-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.game-content{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.game-content .game-display{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.game-content .game-display .game-block-wrapper{
+    text-align: center; 
+}
+
+.game-content .game-display > p{
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+.game-content .game-display .game-block-wrapper > p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.game-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-option .option-header{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+.game-option .option-button-wrapper{
+    display: flex;
+    gap: 32px;
+}
+
+.game-block{
+    background-color: white;
+    border: 2px solid var(--orange);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.game-block > img{
+    width: 96px;
+    height: 96px;
+}
+
+.game-button{
+    cursor: pointer;
+    transition: 0.3s background-color ease-in-out;
+}
+
+.game-button:disabled{
+    cursor: default;
+    background-color: lightgray;
+}
+
+.game-button:hover:not(:disabled){
+    background-color: var(--orange);
+}
+
+.game-button:hover:not(:disabled) > img{
+    filter: brightness(0) invert(1);
+}
