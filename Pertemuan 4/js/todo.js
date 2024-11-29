@@ -21,9 +21,9 @@ const noFilterBtn = _id('no-filter-btn')
 const progressBtn = _id('on-progress-btn')
 const completedBtn = _id('completed-btn')
 
-noFilterBtn.addEventListener('change', filterTodo)
-progressBtn.addEventListener('change', filterTodo)
-completedBtn.addEventListener('change', filterTodo)
+noFilterBtn.addEventListener('change', () => updateGallery())
+progressBtn.addEventListener('change', () => updateGallery())
+completedBtn.addEventListener('change', () => updateGallery())
 
 function setChecked(id, checked){
     todoList.forEach(function(todo){
@@ -31,7 +31,8 @@ function setChecked(id, checked){
             todo.checked = checked;
         }
     })
-    _id(`title-${id}`).classList.toggle('strikethrough');
+    _id(`todo-name-${id}`).classList.toggle('strikethrough');
+    updateGallery()
     saveTodo()
 }
 
@@ -42,20 +43,20 @@ function toggleButtonFn(button){
 function generateTodoCard(todo){
     const todoCard = document.createElement('div')
     todoCard.className = 'todo'
-    todoCard.id = todo.id
+    todoCard.id = `todo-${todo.id}`
     todoCard.innerHTML = `
         <div class="todo-card">
-            <input type="checkbox" name="todo-checked" id="todo-check-${todo.id}">
-            <input type="text" name="todo-title" id="todo-name-${todo.id}" value="${todo.title}" disabled>
+            <input type="checkbox" name="todo-checked" id="todo-check-${todo.id}" che>
+            <input type="text" name="todo-title" class="${todo.checked ? 'strikethrough' : ''}" id="todo-name-${todo.id}" value="${todo.title}" readonly>
             <button id="toggle-btn-${todo.id}">
                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="button-wrapper">
+        <div class="button-wrapper" id="button-wrapper-${todo.id}">
             <button id="edit-btn-${todo.id}">
                 <i class="fa fa-edit" aria-hidden="true"></i>
             </button>
-            <button id="delete-btn-${todo.id}">
+            <button class="delete-btn" id="delete-btn-${todo.id}">
                 <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
         </div>
@@ -64,6 +65,7 @@ function generateTodoCard(todo){
 
     // Di Module JS tidak bisa menambahkan event secara inline melalui innerHTML karena function tidak dibuat global
     const checkbox = _id(`todo-check-${todo.id}`)
+    checkbox.checked = todo.checked
     checkbox.addEventListener('change', (e) => setChecked(todo.id, e.target.checked))
 
     const toggleButton = _id(`toggle-btn-${todo.id}`)
@@ -79,8 +81,14 @@ function generateTodoCard(todo){
 }
 
 function updateGallery(list = todoList){
+    const nofilter = noFilterBtn.checked
+    const onProgress = progressBtn.checked
+    const completed = completedBtn.checked
+
+    const filteredList = list.filter(todo => nofilter || todo.checked === completed || !todo.checked === onProgress)
+
     todoGallery.innerHTML = ""
-    list.forEach(todo => {
+    filteredList.forEach(todo => {
         todoGallery.append(generateTodoCard(todo))
     })
 }
@@ -113,20 +121,11 @@ function searchTodo(){
     updateGallery(filteredList)
 }   
 
-function filterTodo(){
-    const nofilter = noFilterBtn.checked
-    const onProgress = progressBtn.checked
-    const completed = completedBtn.checked
-
-    const filteredList = todoList.filter(todo => nofilter || todo.checked === completed || !todo.checked === onProgress)
-
-    updateGallery(filteredList)
-}
-
 function updateTodo(id){
-    const titleField = _id(`title-${id}`);
+    const titleField = _id(`todo-name-${id}`);
     titleField.readOnly = false;
     titleField.focus();
+    titleField.setSelectionRange(-1, -1);
     titleField.onkeydown = function(e){
         if(e.key === "Enter"){
             if(!titleField.value) return alert("Title cannot be empty!")
@@ -147,7 +146,7 @@ function removeTodo(id){
     // find() digunakan untuk mengiterasi array dan mencari elemen pertama yang cocok
     const index = todoList.find((todo) => todo.id == id)
     const removed = todoList.splice(index, 1)
-    _id(`card-${id}`).remove();
+    _id(`todo-${id}`).remove();
     saveTodo()
     // console.log(removed) 
     // untuk debug mana yang dihapus

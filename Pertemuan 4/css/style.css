@@ -119,6 +119,7 @@ body{
 
 .todo{
     position: relative;
+    z-index: 99;
 }
 
 .todo-card{
@@ -129,16 +130,21 @@ body{
     border-radius: 8px;
     background-color: white;
     box-shadow: 0 0 16px rgba(43, 43, 43, 0.08), 4px 12px 24px rgba(43, 43, 43, 0.1);
-    z-index: 99;
 }
 
 .todo-card > input[type='text']{
     width: 100%;
     border: none;
+    outline: none;
     height: 100%;
     background-color: white;
     font-size: 18px;
     font-weight: 600;
+}
+
+.todo-card > input[type='text'].strikethrough{
+    text-decoration: line-through;
+    opacity: 0.6;
 }
 
 .todo-card button{
@@ -154,12 +160,13 @@ body{
 
 .button-wrapper{
     top: 0;
-    right: 4px;
+    right: 0;
     position: absolute;
     padding: 8px 16px;
     border-radius: 6px;
     background-color: #D0DCFA;
     z-index: -1;
+    transition: 0.3s top ease-in-out;
 }
 
 .button-wrapper.active{
@@ -171,6 +178,10 @@ body{
     padding: 4px;
     border: none;
     background-color: transparent;
+}
+
+.button-wrapper button.delete-btn{
+    color: red;
 }
 
 .button-wrapper button > i{
