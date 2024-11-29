@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 4</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/todo.js" defer></script>
+    <!-- <script src="js/example.js" type="module"></script> -->
+</head>
+<body>
+    <section class="todo-list-section">
+        <div class="todo-header">
+            <h1>Todo List</h1>
+            <div class="todo-input-wrapper">
+                <div class="todo-input-group">
+                    <input type="text" name="title" id="todo-title" placeholder="Enter todo name">
+                    <button id="todo-add-btn">Add</button>
+                </div>
+                <div class="todo-input-group">
+                    <input type="text" name="search" id="todo-search" placeholder="Search todo">
+                    <button id="todo-search-btn">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="todo-content">
+            <div class="todo-filter-wrapper">
+                <p>Filter By</p>
+                <div class="todo-filter-group">
+                    <div class="todo-filter">
+                        <input type="radio" name="filter" id="no-filter-btn" checked>
+                        <label for="no-filter">All</label>
+                    </div>
+                    <div class="todo-filter">
+                        <input type="radio" name="filter" id="on-progress-btn">
+                        <label for="no-filter">On Progress</label>
+                    </div>
+                    <div class="todo-filter">
+                        <input type="radio" name="filter" id="completed-btn">
+                        <label for="no-filter">Completed</label>
+                    </div>
+                </div>
+            </div>
+            <div id="todo-gallery">
+                <!-- <div class="todo">
+                    <div class="todo-card">
+                        <input type="checkbox" name="todo-checked" id="todo-checked-btn">
+                        <input type="text" name="todo-title" id="todo-name" disabled>
+                        <button id="toggle-btn">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="button-wrapper">
+                        <button id="edit-btn">
+                            <i class="fa fa-edit" aria-hidden="true"></i>
+                        </button>
+                        <button id="delete-btn">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>
