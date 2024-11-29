@@ -82,14 +82,15 @@ rockButton.addEventListener('click', () => playOption('rock'))
 paperButton.addEventListener('click', () => playOption('paper'))
 scissorsButton.addEventListener('click', () => playOption('scissors'))
 
-localStorage.getItem(key)
+// Penjelasan localStorage
+// localStorage.getItem(key)
 
-'{"highScore":3,"score":0,"livesRemaining":3}' -> value localStorage
+// '{"highScore":3,"score":0,"livesRemaining":3}' -> value localStorage
 
-const obj = {highScore:3,score:0,livesRemaining:3} -> parsed value localStorage
+// const obj = {highScore:3,score:0,livesRemaining:3} -> parsed value localStorage
 
-localStorage.setItem(key, value)
+// localStorage.setItem(key, value)
 
-localStorage.removeItem('gameData')
+// localStorage.removeItem('gameData')
 
-localStorage.clear()
+// localStorage.clear()
