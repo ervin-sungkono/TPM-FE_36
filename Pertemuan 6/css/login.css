@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.login-wrapper{
+    padding: 0 24px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form{
+    width: 100%;
+    max-width: 616px;
+    background-color: white;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1), 6px 16px 24px rgba(0, 0, 0, 0.12);
+    padding: 24px 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#login-btn{
+    margin-top: 8px;
+    width: 100%;
+}

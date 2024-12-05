@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+
+    <script src="js/product.js" defer></script>
+    <script src="js/check-auth.js"></script>
+</head>
+<body>
+    <div class="create-form-wrapper">
+        <h2>Product Form</h2>
+        <form id="product-form" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="product_name">Product Name</label>
+                <input type="text" name="name" id="product_name" required>
+            </div>
+            <div class="input-group">
+                <label for="product_description">Product Description</label>
+                <input type="text" name="description" id="product_description" required>
+            </div>
+            <div class="input-group">
+                <label for="product_stock">Product Stock</label>
+                <input type="number" name="stock" id="product_stock" required>
+            </div>
+            <div class="input-group">
+                <label for="product_price">Product Price</label>
+                <input type="number" name="price" id="product_price" required>
+            </div>
+            <div class="input-group">
+                <label for="production_date">Production Date</label>
+                <input type="date" name="production_date" id="production_date" required>
+            </div>
+            <div class="input-group">
+                <label for="product_image">Product Image</label>
+                <input type="file" accept="image/*" name="product_image" id="product_image" required>
+                <div class="product-preview">
+                    <img id="product-img-preview" src=""></img>
+                </div>
+            </div>
+            <button type="submit" id="create-btn" class="button primary-button">Create</button>
+        </form>
+    </div>
+</body>
+</html>
